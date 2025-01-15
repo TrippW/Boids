@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4crtw30r23ru"]
+
+[ext_resource type="Script" path="res://Boid.gd" id="1_a6lsx"]
+[ext_resource type="Texture2D" uid="uid://gflsxadfkd01" path="res://Bird01.svg" id="2_y5n5s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gpnxu"]
+
+[node name="Boid" type="Node2D"]
+script = ExtResource("1_a6lsx")
+
+[node name="BoidArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoidArea"]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_gpnxu")
+
+[node name="DetectArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_gpnxu")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(-7, -3)
+rotation = 3.14159
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_y5n5s")

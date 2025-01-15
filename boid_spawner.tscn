@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://blskxi7yay563"]
+
+[ext_resource type="Script" path="res://Boid Spawner.gd" id="1_gjkdp"]
+[ext_resource type="PackedScene" uid="uid://b4crtw30r23ru" path="res://boid.tscn" id="2_ltojl"]
+
+[node name="Boid Spawner" type="Node2D"]
+script = ExtResource("1_gjkdp")
+count = 150
+boidsScene = ExtResource("2_ltojl")
